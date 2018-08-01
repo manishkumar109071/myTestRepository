@@ -23,6 +23,7 @@ public class Main {
 
         for (int i = 0; i < arr.size()-1 ; i++) {
             System.out.println(arr.get(i).getId());
+            System.out.println(arr.get(i).getLogInputDate());
         }
     }
 }
