@@ -21,7 +21,6 @@ public class LogsCollectionBuilder implements Parsable <File> {
         String hostName = "";
         String typeOfMessage = "";
         logList = new ArrayList <>();
-
         try (Scanner input = new Scanner(file).useDelimiter(pattern)) {
             while (input.hasNext()) {
                 String line = input.next().trim();
@@ -74,19 +73,15 @@ public class LogsCollectionBuilder implements Parsable <File> {
                     timeDifference = 0;
                     break;
                 } else if (timeDifference <= 4) {
-                    if(list.get(j).getId().equals(list.get(0).getId())) {
+                    if (list.get(j).getId().equals(list.get(0).getId())) {
                         list.get(j).setProcessedTime(list.get(0).getProcessedTime());
                     }
-                    String test = list.get(i).getId();
-                        if(list.get(i).getId().equals(list.get(j).getId())) {
-                            list.get(i).setAlertFlag(false);
-                            list.get(i).setProcessedTime((int) timeDifference);
-                            list.get(j).setAlertFlag(false);
-                            list.get(j).setProcessedTime((int) timeDifference); }
-//                        } else {
-//                            list.get(i).setAlertFlag(false);
-//                        }
-
+                    if (list.get(i).getId().equals(list.get(j).getId())) {
+                        list.get(i).setAlertFlag(false);
+                        list.get(i).setProcessedTime((int) timeDifference);
+                        list.get(j).setAlertFlag(false);
+                        list.get(j).setProcessedTime((int) timeDifference);
+                    }
                 }
             }
 
@@ -104,6 +99,7 @@ public class LogsCollectionBuilder implements Parsable <File> {
         }
         return false;
     }
+
     public static boolean isTypeOfMessageAvailable(JSONObject log) {
         try {
             if (log.getString("type") == null) {
@@ -119,7 +115,7 @@ public class LogsCollectionBuilder implements Parsable <File> {
 
     public static Optional <String> WrapHostLog(JSONObject log) throws JSONException {
         if (log.getString("host").isEmpty()) {
-            return Optional.of("null");
+            return Optional.of("");
         } else {
             return Optional.of(log.getString("host"));
         }
@@ -127,7 +123,7 @@ public class LogsCollectionBuilder implements Parsable <File> {
 
     public static Optional <String> WrapTypeOfMessageLog(JSONObject log) throws JSONException {
         if (log.getString("type").isEmpty()) {
-            return Optional.of("null");
+            return Optional.of("");
         } else {
             return Optional.of(log.getString("type"));
         }

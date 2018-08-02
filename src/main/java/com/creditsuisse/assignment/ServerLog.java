@@ -22,8 +22,6 @@ public class ServerLog {
         this.host = host;
         this.type = type;
         this.logInputDate = convertMillisecondsIntoDate(this.getTimestamp());
-        this.alertFlag = false;
-        this.processedTime = 0;
     }
 
     public void setAlertFlag(boolean alertFlag) {
@@ -37,8 +35,8 @@ public class ServerLog {
     @Override
     public String toString() {
         return "PROCESS_ID: " + this.id + "\nSTATE: " + this.state + "\nTIME_STAMP: " + this.timestamp
-                + "\nHOST: " + this.host + "\nTYPE: " + this.type + "\nPROCESS_CREATION: " + this.getLogInputDate()
-                + "\nALERT_FLAG: " + this.isAlertFlag() + "\nTIME_PROCESSED: " + this.processedTime +" ms";
+                + "\nHOST: " + this.host + "\nTYPE: " + this.type + "\nEVENT_CREATION: " + this.getLogInputDate()
+                + "\nALERT_FLAG: " + this.isAlertFlag() + "\nPROCESS_TIME: " + this.processedTime +" ms";
     }
 
     public LocalDateTime getLogInputDate() {

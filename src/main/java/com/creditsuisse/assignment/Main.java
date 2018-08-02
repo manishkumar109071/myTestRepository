@@ -4,12 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+
 public class Main {
 
     //for testing purposes assigned fixed file path
     public static final String FILE_PATH = "C:\\Users\\Hubert\\Desktop\\log.json";
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws Exception {
 
         //String filePath = JsonFileLog.inputTheFilePath();
         JSONFileRetriever myJsonFile = new JSONFileRetriever(FILE_PATH);
@@ -21,12 +22,15 @@ public class Main {
         LogsCollectionBuilder listBuilder = new LogsCollectionBuilder();
         List <ServerLog> arr = listBuilder.parseFile(myFile);
         listBuilder.setTheAlertFlagsForDelayedEvents(arr);
+        HSQLDatabase.runDatabase(arr);
+//        HSQLDatabase.establishDatabaseConnection();
+//        HSQLDatabase.fillInTheDBTable(arr);
 
-        for (int i = 0; i < arr.size() ; i++) {
-
-            System.out.println(arr.get(i).toString() + "\n");
-
-        }
+//        for (int i = 0; i < arr.size() ; i++) {
+//
+//            System.out.println(arr.get(i).toString() + "\n");
+//
+//        }
 
 
     }
