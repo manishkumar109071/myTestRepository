@@ -3,8 +3,10 @@ package com.creditsuisse.assignment;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ServerLog {
+public class ServerLog implements Comparable {
 
     private String id;
     private String state;
@@ -14,19 +16,38 @@ public class ServerLog {
     private LocalDateTime logInputDate;
     private boolean alertFlag;
 
-    public ServerLog(String id, String state, long timestamp, String host, String type) {
+
+
+    public ServerLog(String id, String state, long timestamp, String host, String type, boolean flag) {
         this.id = id;
         this.state = state;
         this.timestamp = timestamp;
         this.host = host;
         this.type = type;
         this.logInputDate = convertMillisecondsIntoDate(this.getTimestamp());
-        this.alertFlag = checkAlertFlag();
+        this.alertFlag = false;
     }
 
-    public boolean checkAlertFlag () {
+    public void setAlertFlag(boolean alertFlag) {
+        this.alertFlag = alertFlag;
+    }
+
+    public boolean checkAlertFlag (List<ServerLog> list) {
+
+        List<ServerLog> sortedList = new ArrayList <>();
+
 
         return false;
+    }
+
+    public LocalDateTime convertMillisecondsIntoDate(long timeInMilliseconds) {
+        Instant inst  = Instant.ofEpochMilli(timeInMilliseconds);
+        return LocalDateTime.ofInstant(inst,ZoneId.of("CET"));
+    }
+    @Override
+    public String toString() {
+        return "ID: " + this.id + "\nSTATE: " + this.state + "\nTIME_STAMP: " + this.timestamp
+                + "\nHOST: " + this.host + "\nTYPE: " + this.type;
     }
 
     public LocalDateTime getLogInputDate() {
@@ -36,6 +57,7 @@ public class ServerLog {
     public boolean isAlertFlag() {
         return alertFlag;
     }
+
 
     public String getId() {
         return id;
@@ -60,19 +82,13 @@ public class ServerLog {
     public void setHost(String host) {
         this.host = host;
     }
-
     public void setType(String type) {
         this.type = type;
     }
 
-    public LocalDateTime convertMillisecondsIntoDate(long timeInMilliseconds) {
-        Instant inst  = Instant.ofEpochMilli(timeInMilliseconds);
-        return LocalDateTime.ofInstant(inst,ZoneId.of("CET"));
-    }
 
     @Override
-    public String toString() {
-        return "ID: " + this.id + "\nSTATE: " + this.state + "\nTIME_STAMP: " + this.timestamp
-                + "\nHOST: " + this.host + "\nTYPE: " + this.type;
+    public int compareTo(Object o) {
+        return 0;
     }
 }

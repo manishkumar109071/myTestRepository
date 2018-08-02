@@ -19,11 +19,9 @@ public class Main {
         }
         File myFile = myJsonFile.getFile();
         LogsCollectionBuilder listBuilder = new LogsCollectionBuilder();
-        List<ServerLog> arr = listBuilder.parseFile(myFile);
+        List <ServerLog> arr = listBuilder.parseFile(myFile);
+        listBuilder.setTheAlertFlagsForDelayedEvents(arr);
 
-        for (int i = 0; i < arr.size()-1 ; i++) {
-            System.out.println(arr.get(i).getId());
-            System.out.println(arr.get(i).getLogInputDate());
-        }
+
     }
 }
