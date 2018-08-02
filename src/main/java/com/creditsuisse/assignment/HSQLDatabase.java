@@ -1,6 +1,5 @@
 package com.creditsuisse.assignment;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,7 +14,7 @@ public class HSQLDatabase {
     static Connection connection;
     static String connectionString = "jdbc:hsqldb:file:db-data/hsqldatabase";
 
-    public static void runDatabase(List <ServerLog> list) throws Exception {
+    public static void exportToDatabase(List <ServerLog> list) throws Exception {
 
         Logger databaseLogger = Logger.getLogger("hsqldb.db");
         databaseLogger.setUseParentHandlers(false);
@@ -29,6 +28,7 @@ public class HSQLDatabase {
             throw exception;
         }
         try {
+            //default userName "SA" and password "" for testing purposes
             connection = DriverManager.getConnection(connectionString, "SA", "");
             stmt = connection.createStatement();
             stmt.executeUpdate("CREATE TABLE if not exists ServerLog (EVENT_ID VARCHAR(50) NOT NULL, EVENT_DURATION INT NOT NULL, EVENT_TYPE VARCHAR(20) NOT NULL, EVENT_HOST VARCHAR(20) NOT NULL, EVENT_FLAG BIT DEFAULT FALSE NOT NULL);");
@@ -46,7 +46,6 @@ public class HSQLDatabase {
                 prepStatement.executeUpdate();
                 logCounter++;
             }
-
             System.out.println(logCounter + " rows added into database");
         } catch (Exception e) {
             throw e;

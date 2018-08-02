@@ -60,6 +60,6 @@ public class JSONFileRetriever {
         System.out.print("Please input the file path: ");
         String userInput = scanner.nextLine();
         scanner.close();
-        return " ";
+        return userInput;
     }
 }
