@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class JSONFileRetriever {
 
+    private static final String DEFAULT_JSON_PATH = "src/sourcefile/log.json";
     private String jsonFilePath;
     private File file;
 
@@ -17,6 +18,7 @@ public class JSONFileRetriever {
             return;
         }
     }
+
     @Override
     public String toString() {
         return "JSON File name:  " + file.getName() +
@@ -53,12 +55,34 @@ public class JSONFileRetriever {
         }
     }
 
-    public static String inputTheFilePath() {
+    public static String getTheJsonPath() {
 
-        System.out.println("Please input the file path: ");
+        boolean isCorrectInput = false;
+        String userInput = "";
+        System.out.print("Do you want to specify the .json file? Select -> (Y/N) ");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please input the file path: ");
-        String userInput = scanner.nextLine();
+        String userAnswer = scanner.nextLine();
+
+        while (isCorrectInput == false) {
+            switch (userAnswer.toLowerCase()) {
+                case "y": {
+                    System.out.print("Please provide the file path: ");
+                    userInput = scanner.nextLine();
+                    isCorrectInput = true;
+                    break;
+                }
+                case "n": {
+                    System.out.print("Default file path has been applied.\n");
+                    userInput = DEFAULT_JSON_PATH;
+                    isCorrectInput = true;
+                    break;
+                }
+                default:
+                    System.out.println("Inputted incorrect value.\nPlease try again:");
+                    userAnswer = scanner.nextLine();
+                    break;
+            }
+        }
         scanner.close();
         return userInput;
     }

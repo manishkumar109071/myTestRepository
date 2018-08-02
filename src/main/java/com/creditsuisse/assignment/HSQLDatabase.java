@@ -16,19 +16,21 @@ public class HSQLDatabase {
 
     public static void exportToDatabase(List <ServerLog> list) throws Exception {
 
+        Thread timer = new AsyncTimer();
+        Thread tt = new Thread(timer);
+        tt.start();
         Logger databaseLogger = Logger.getLogger("hsqldb.db");
         databaseLogger.setUseParentHandlers(false);
         databaseLogger.setLevel(Level.WARNING);
         databaseLogger.addHandler(new FileHandler("myapp.log"));
         Statement stmt;
-
         try {
             Class.forName("org.hsqldb.jdbc.JDBCDriver");
         } catch (ClassNotFoundException exception) {
             throw exception;
         }
         try {
-            //default userName "SA" and password "" for testing purposes
+
             connection = DriverManager.getConnection(connectionString, "SA", "");
             stmt = connection.createStatement();
             stmt.executeUpdate("CREATE TABLE if not exists ServerLog (EVENT_ID VARCHAR(50) NOT NULL, EVENT_DURATION INT NOT NULL, EVENT_TYPE VARCHAR(20) NOT NULL, EVENT_HOST VARCHAR(20) NOT NULL, EVENT_FLAG BIT DEFAULT FALSE NOT NULL);");
@@ -46,7 +48,9 @@ public class HSQLDatabase {
                 prepStatement.executeUpdate();
                 logCounter++;
             }
-            System.out.println(logCounter + " rows added into database");
+            System.out.println(logCounter + " rows added into database.");
+            tt.interrupt();
+
         } catch (Exception e) {
             throw e;
         } finally {

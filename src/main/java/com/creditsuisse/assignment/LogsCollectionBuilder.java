@@ -46,6 +46,14 @@ public class LogsCollectionBuilder implements Parsable <File> {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        StringBuilder sb = new StringBuilder();
+        sb.append("The .json file in the path: (")
+                .append(this.file)
+                .append(") has been successfully scanned.\n")
+                .append("All of the logs (")
+                .append(logList.size())
+                .append(") are collected in a list.");
+        System.out.println(sb);
         return logList;
     }
 
@@ -64,7 +72,6 @@ public class LogsCollectionBuilder implements Parsable <File> {
                     }
                 }
                 if (timeDifference > 4) {
-                    String test = list.get(i).getId();
                     list.get(i).setAlertFlag(true);
                     list.get(i).setProcessedTime((int) timeDifference);
                     list.get(j - 1).setAlertFlag(true);
@@ -84,9 +91,9 @@ public class LogsCollectionBuilder implements Parsable <File> {
                     }
                 }
             }
-
         }
     }
+
     public static boolean isHostNameAvailable(JSONObject log) {
         try {
             if (log.getString("host") == null) {
@@ -120,7 +127,6 @@ public class LogsCollectionBuilder implements Parsable <File> {
             return Optional.of(log.getString("host"));
         }
     }
-
     public static Optional <String> WrapTypeOfMessageLog(JSONObject log) throws JSONException {
         if (log.getString("type").isEmpty()) {
             return Optional.of("");

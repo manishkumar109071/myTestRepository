@@ -1,23 +1,22 @@
 package com.creditsuisse.assignment;
 
-public class AsyncTimer implements Runnable {
+public class AsyncTimer extends Thread implements Runnable {
 
     private static int processTime;
+
     @Override
     public void run() {
 
         int timeCounter = 0;
         while (true) {
-
             try {
                 Thread.sleep(1);
+                this.processTime = timeCounter++;
             } catch (InterruptedException e) {
-                e.printStackTrace();
-                return;
+                System.out.println("Second thread has been finished! The event logs " +
+                        "were sent to the database in the " + processTime + " ms.");
+               return;
             }
-            this.processTime = timeCounter++;
-
-            System.out.println(processTime);
         }
     }
 }
