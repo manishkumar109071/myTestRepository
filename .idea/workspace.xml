@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed789c8d-b056-4150-ab3f-4d273347ace5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/AsyncTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/HSQLDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/LogsCollectionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/LogsCollectionBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/ServerLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/ServerLog.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="102">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,8 +49,8 @@
       <file leaf-file-name="ServerLog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/ServerLog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="34">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#823#824#0" expanded="true" />
@@ -66,11 +70,38 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Parsable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Parsable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HSQLDatabase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/HSQLDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncTimer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/AsyncTimer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JSONFileRetriever.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/JSONFileRetriever.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="157">
-              <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +112,29 @@
       <file leaf-file-name="LogsCollectionBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/LogsCollectionBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="76" column="98" lean-forward="true" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+            <state relative-caret-position="75">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FunctionSQL.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hsqldb/hsqldb/2.4.1/39b5e7e988c00331083aaf9231ca4e4fb00ac70d/hsqldb-2.4.1-sources.jar!/org/hsqldb/FunctionSQL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-35627">
+              <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jdbcDriver.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hsqldb/hsqldb/2.4.1/39b5e7e988c00331083aaf9231ca4e4fb00ac70d/hsqldb-2.4.1-sources.jar!/org/hsqldb/jdbcDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -347,10 +396,10 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4599429886134" />
+        <entry key="$PROJECT_DIR$" value="4599483091309" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/ServerLogsManager/build.gradle" value="753247400" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="2649446467" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="2296667764" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="511548810" />
       </map>
     </option>
@@ -552,9 +601,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Parsable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/JSONFileRetriever.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/MyComparator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/ServerLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/LogsCollectionBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/HSQLDatabase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/AsyncTimer.java" />
       </list>
     </option>
   </component>
@@ -633,6 +684,36 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServersLogManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ServersLogManager" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="assignment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServersLogManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ServersLogManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.hsqldb:hsqldb:2.4.1" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="ServersLogManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.hsqldb:hsqldb:2.4.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="hsqldb-2.4.1.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ServersLogManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.hsqldb:hsqldb:2.4.1" type="70bed36:NamedLibraryElementNode" />
+              <item name="hsqldb-2.4.1.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hsqldb" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -737,19 +818,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533143034737</updated>
-      <workItem from="1533143036363" duration="11536000" />
+      <workItem from="1533143036363" duration="12846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11536000" />
+    <option name="totallyTimeSpent" value="12846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50040483" side_tool="true" visible="true" weight="0.32920355" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info id="Capture Tool" />
@@ -765,8 +846,8 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13097346" />
+      <window_info anchor="bottom" id="Version Control" sideWeight="0.49959514" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.5150443" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22995952" />
       <window_info id="Learn" />
@@ -821,17 +902,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Parsable.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/BiFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="269">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/MyComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/JSONFileRetriever.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/ServerLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="34">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#823#824#0" expanded="true" />
@@ -850,10 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/JSONFileRetriever.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -862,38 +963,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/LogsCollectionBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="76" column="98" lean-forward="true" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+        <state relative-caret-position="75">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/BiFunction.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hsqldb/hsqldb/2.4.1/39b5e7e988c00331083aaf9231ca4e4fb00ac70d/hsqldb-2.4.1-sources.jar!/org/hsqldb/FunctionSQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        <state relative-caret-position="-35627">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/MyComparator.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hsqldb/hsqldb/2.4.1/39b5e7e988c00331083aaf9231ca4e4fb00ac70d/hsqldb-2.4.1-sources.jar!/org/hsqldb/jdbcDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/Parsable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/AsyncTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/creditsuisse/assignment/HSQLDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>

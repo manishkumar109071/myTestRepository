@@ -83,7 +83,6 @@ public class LogsCollectionBuilder implements Parsable <File> {
 
         }
     }
-
     public static boolean isHostNameAvailable(JSONObject log) {
         try {
             if (log.getString("host") == null) {

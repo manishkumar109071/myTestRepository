@@ -3,8 +3,6 @@ package com.creditsuisse.assignment;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ServerLog implements Comparable {
 
@@ -15,8 +13,6 @@ public class ServerLog implements Comparable {
     private String type;
     private LocalDateTime logInputDate;
     private boolean alertFlag;
-
-
 
     public ServerLog(String id, String state, long timestamp, String host, String type, boolean flag) {
         this.id = id;
@@ -30,14 +26,6 @@ public class ServerLog implements Comparable {
 
     public void setAlertFlag(boolean alertFlag) {
         this.alertFlag = alertFlag;
-    }
-
-    public boolean checkAlertFlag (List<ServerLog> list) {
-
-        List<ServerLog> sortedList = new ArrayList <>();
-
-
-        return false;
     }
 
     public LocalDateTime convertMillisecondsIntoDate(long timeInMilliseconds) {
