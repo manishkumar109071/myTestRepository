@@ -4,7 +4,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
-public class ServerLog implements Comparable {
+public class ServerLog {
 
     private String id;
     private String state;
@@ -13,8 +13,9 @@ public class ServerLog implements Comparable {
     private String type;
     private LocalDateTime logInputDate;
     private boolean alertFlag;
+    private int processedTime;
 
-    public ServerLog(String id, String state, long timestamp, String host, String type, boolean flag) {
+    public ServerLog(String id, String state, long timestamp, String host, String type) {
         this.id = id;
         this.state = state;
         this.timestamp = timestamp;
@@ -22,6 +23,7 @@ public class ServerLog implements Comparable {
         this.type = type;
         this.logInputDate = convertMillisecondsIntoDate(this.getTimestamp());
         this.alertFlag = false;
+        this.processedTime = 0;
     }
 
     public void setAlertFlag(boolean alertFlag) {
@@ -34,8 +36,9 @@ public class ServerLog implements Comparable {
     }
     @Override
     public String toString() {
-        return "ID: " + this.id + "\nSTATE: " + this.state + "\nTIME_STAMP: " + this.timestamp
-                + "\nHOST: " + this.host + "\nTYPE: " + this.type;
+        return "PROCESS_ID: " + this.id + "\nSTATE: " + this.state + "\nTIME_STAMP: " + this.timestamp
+                + "\nHOST: " + this.host + "\nTYPE: " + this.type + "\nPROCESS_CREATION: " + this.getLogInputDate()
+                + "\nALERT_FLAG: " + this.isAlertFlag() + "\nTIME_PROCESSED: " + this.processedTime +" ms";
     }
 
     public LocalDateTime getLogInputDate() {
@@ -46,13 +49,20 @@ public class ServerLog implements Comparable {
         return alertFlag;
     }
 
-
     public String getId() {
         return id;
     }
 
     public String getState() {
         return state;
+    }
+
+    public int getProcessedTime() {
+        return processedTime;
+    }
+
+    public void setProcessedTime(int processedTime) {
+        this.processedTime = processedTime;
     }
 
     public long getTimestamp() {
@@ -72,11 +82,5 @@ public class ServerLog implements Comparable {
     }
     public void setType(String type) {
         this.type = type;
-    }
-
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 }

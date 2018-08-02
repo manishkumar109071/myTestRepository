@@ -22,6 +22,12 @@ public class Main {
         List <ServerLog> arr = listBuilder.parseFile(myFile);
         listBuilder.setTheAlertFlagsForDelayedEvents(arr);
 
+        for (int i = 0; i < arr.size() ; i++) {
+
+            System.out.println(arr.get(i).toString() + "\n");
+
+        }
+
 
     }
 }

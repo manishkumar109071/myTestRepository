@@ -38,17 +38,13 @@ public class LogsCollectionBuilder implements Parsable <File> {
                     } else {
                         typeOfMessage = obj.getString("type");
                     }
-
                     logList.add(new ServerLog(obj.getString("id"), obj.getString("state"),
-                            obj.getLong("timestamp"), hostName, typeOfMessage, false));
-
+                            obj.getLong("timestamp"), hostName, typeOfMessage));
                 } else {
                     break;
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
             e.printStackTrace();
         }
         return logList;
@@ -58,26 +54,39 @@ public class LogsCollectionBuilder implements Parsable <File> {
 
         long timeDifference = 0;
         for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = i; j < list.size(); j++) {
+            for (int j = 1; j < list.size(); j++) {
                 if (list.get(i).getId().equals(list.get(j).getId())) {
                     if (!list.get(i).getState().equals(list.get(j).getState())) {
-                         if (list.get(i).getState().toUpperCase().equals("STARTED")) {
-                             timeDifference = list.get(j).getTimestamp() - list.get(i).getTimestamp();
-                         } else {
-                             timeDifference = list.get(i).getTimestamp() - list.get(j).getTimestamp();
-                         }
+                        if (list.get(i).getState().toUpperCase().equals("STARTED")) {
+                            timeDifference = list.get(j).getTimestamp() - list.get(i).getTimestamp();
+                        } else {
+                            timeDifference = list.get(i).getTimestamp() - list.get(j).getTimestamp();
+                        }
                     }
                 }
-                if (timeDifference > 4)  {
+                if (timeDifference > 4) {
+                    String test = list.get(i).getId();
                     list.get(i).setAlertFlag(true);
+                    list.get(i).setProcessedTime((int) timeDifference);
                     list.get(j - 1).setAlertFlag(true);
-                    timeDifference = 0;
+                    list.get(j - 1).setProcessedTime((int) timeDifference);
 
-                    System.out.println(list.get(i).getId() + " " + list.get(i).isAlertFlag());
-                    System.out.println(list.get(j-1).getId() + " " + list.get(j-1).isAlertFlag());
+                    timeDifference = 0;
                     break;
                 } else if (timeDifference <= 4) {
-                    list.get(i).setAlertFlag(false);
+                    if(list.get(j).getId().equals(list.get(0).getId())) {
+                        list.get(j).setProcessedTime(list.get(0).getProcessedTime());
+                    }
+                    String test = list.get(i).getId();
+                        if(list.get(i).getId().equals(list.get(j).getId())) {
+                            list.get(i).setAlertFlag(false);
+                            list.get(i).setProcessedTime((int) timeDifference);
+                            list.get(j).setAlertFlag(false);
+                            list.get(j).setProcessedTime((int) timeDifference); }
+//                        } else {
+//                            list.get(i).setAlertFlag(false);
+//                        }
+
                 }
             }
 
@@ -95,35 +104,6 @@ public class LogsCollectionBuilder implements Parsable <File> {
         }
         return false;
     }
-
-    public void sortList(List <ServerLog> list) {
-
-        List <ServerLog> sortedList = new ArrayList <>();
-
-        for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).getId().compareTo(list.get(j).getId()) > 0) {
-//                    //... Exchange elements in first array
-//                    String temp = list.get(i).getId();
-//                    list.set(i, list.get(j));
-//                    list.set(j, temp);
-                    ServerLog temp = list.get(i);
-                    //... Exchange elements in second array
-                    // temp = sortedList.get(i).getId();
-                    sortedList.set(i, list.get(j));
-                    sortedList.set(j, temp);
-                }
-
-            }
-        }
-
-        for (int i = 0; i < sortedList.size() - 1; i++) {
-
-            System.out.println(sortedList.get(i));
-
-        }
-    }
-
     public static boolean isTypeOfMessageAvailable(JSONObject log) {
         try {
             if (log.getString("type") == null) {
