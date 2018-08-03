@@ -72,7 +72,7 @@ public class JSONFileRetriever {
                     break;
                 }
                 case "n": {
-                    System.out.print("Default file path has been applied.\n");
+                    System.out.print("Default file path has been applied\n" );
                     userInput = DEFAULT_JSON_PATH;
                     isCorrectInput = true;
                     break;
@@ -83,7 +83,6 @@ public class JSONFileRetriever {
                     break;
             }
         }
-        scanner.close();
         return userInput;
     }
 }

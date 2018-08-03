@@ -13,9 +13,9 @@ public class AsyncTimer extends Thread implements Runnable {
                 Thread.sleep(1);
                 this.processTime = timeCounter++;
             } catch (InterruptedException e) {
-                System.out.println("Second thread has been finished! The event logs " +
+                System.out.println("Second thread has been finished! The logs " +
                         "were sent to the database in the " + processTime + " ms.");
-               return;
+                return;
             }
         }
     }

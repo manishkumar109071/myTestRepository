@@ -19,5 +19,9 @@ public class Main {
         List <ServerLog> arr = listBuilder.parseFile(myFile);
         listBuilder.setTheAlertFlagsForDelayedEvents(arr);
         HSQLDatabase.exportToDatabase(arr);
+        if (LogsCollectionBuilder.isPreviewLogApproved()) {
+            listBuilder.getTheEventList(arr, 3);
+        }
+        System.out.println("Process has been successfully finished!");
     }
 }

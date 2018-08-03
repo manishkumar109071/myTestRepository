@@ -94,9 +94,9 @@ public class LogsCollectionBuilder implements Parsable <File> {
         }
     }
 
-    public static boolean isHostNameAvailable(JSONObject log) {
+    public boolean isHostNameAvailable(JSONObject log) {
         try {
-            if (log.getString("host") == null) {
+            if (log.getString("host").equals("N/A")) {
                 return false;
             } else {
                 return true;
@@ -107,12 +107,12 @@ public class LogsCollectionBuilder implements Parsable <File> {
         return false;
     }
 
-    public static boolean isTypeOfMessageAvailable(JSONObject log) {
+    public boolean isTypeOfMessageAvailable(JSONObject log) {
         try {
-            if (log.getString("type") == null) {
+            if (!log.getString("type").equals("APPLICATION_LOG")) {
                 return false;
             } else {
-                return false;
+                return true;
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -120,19 +120,63 @@ public class LogsCollectionBuilder implements Parsable <File> {
         return false;
     }
 
-    public static Optional <String> WrapHostLog(JSONObject log) throws JSONException {
-        if (log.getString("host").isEmpty()) {
-            return Optional.of("");
-        } else {
-            return Optional.of(log.getString("host"));
+    public void getTheEventList(List <ServerLog> logList, int range) {
+        int counter = 1;
+        for (ServerLog logElement : logList) {
+            if (counter == range) {
+                return;
+            } else {
+                System.out.println("Log: " + counter + "\n" + logElement.toString() + "\n");
+                counter++;
+            }
         }
     }
-    public static Optional <String> WrapTypeOfMessageLog(JSONObject log) throws JSONException {
-        if (log.getString("type").isEmpty()) {
-            return Optional.of("");
-        } else {
-            return Optional.of(log.getString("type"));
+
+    public static boolean isPreviewLogApproved() throws InterruptedException {
+
+        Thread.sleep(1000);
+        boolean isCorrectAnswer = false;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("\nDo you want to preview the file.log ? (Y/N) ");
+        String userInput = scan.nextLine();
+        while (isCorrectAnswer == false) {
+            switch (userInput.toLowerCase()) {
+                case "y": {
+                    isCorrectAnswer = true;
+                    return true;
+                }
+                case "n": {
+                    isCorrectAnswer = true;
+                    return false;
+                }
+                default:
+                    System.out.println("Inputted incorrect value.\nPlease try again:");
+                    userInput = scan.nextLine();
+                    break;
+            }
         }
+        scan.close();
+        return false;
     }
+    //    public static Optional <String> WrapHostLog(JSONObject log) throws JSONException {
+//        if (log.getString("host").isEmpty()) {
+//            return Optional.of("");
+//        } else {
+//            return Optional.of(log.getString("host"));
+//        }
+//    }
+//    public static Optional <String> WrapTypeOfMessageLog(JSONObject log) throws JSONException {
+//        if (log.getString("type").isEmpty()) {
+//            return Optional.of("");
+//        } else {
+//            return Optional.of(log.getString("type"));
+//        }
+//    }
+
 }
+
+
+
+
+
 

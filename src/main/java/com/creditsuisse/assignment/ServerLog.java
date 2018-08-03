@@ -74,11 +74,4 @@ public class ServerLog {
     public String getType() {
         return type;
     }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-    public void setType(String type) {
-        this.type = type;
-    }
 }
