@@ -3,6 +3,10 @@ package com.creditsuisse.assignment;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.myAssignment.assignment.LogsCollectionBuilder;
+import com.myAssignment.assignment.ServerLog;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;

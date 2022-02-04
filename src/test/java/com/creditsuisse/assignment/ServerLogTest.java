@@ -2,6 +2,8 @@ package com.creditsuisse.assignment;
 
 import org.junit.Test;
 
+import com.myAssignment.assignment.ServerLog;
+
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
