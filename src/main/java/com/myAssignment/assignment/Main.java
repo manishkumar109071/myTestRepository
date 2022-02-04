@@ -15,6 +15,7 @@ public class Main {
             throw new FileNotFoundException("Requested file not available on path: "
                     + filePath);
         }
+        
         File myFile = myJsonFile.getFile();
         LogsCollectionBuilder listBuilder = new LogsCollectionBuilder();
         List <ServerLog> arr = listBuilder.parseFile(myFile);
